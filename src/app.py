@@ -71,10 +71,14 @@ def main():
             if st.button("Run"):
                 start_time = time.time()
                 with st.spinner('Processing data...'):
+                    
+                    # Select 30 rows to normalize
+                    df = df.sample(30)
+                    # normalize the text
                     df['normalize_text'] = df[text_column].apply(normalize_text)
 
                 # allow the user to download the new dataset
-                csv = df.to_csv(index=False)
+                csv = df[[text_column, 'normalize_text']].to_csv(index=False)
                 b64 = base64.b64encode(csv.encode()).decode()
                 st.markdown(f'<a href="data:file/csv;base64,{b64}" download="new_dataset.csv">Download CSV</a>', unsafe_allow_html=True)
 
