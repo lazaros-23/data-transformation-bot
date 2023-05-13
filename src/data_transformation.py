@@ -5,9 +5,14 @@ from langchain import LLMChain
 
 ## Load API key from .env file
 from dotenv import dotenv_values
-secrets = dotenv_values(".env")
-OPENAI_API_KEY = secrets['OPENAI_API_KEY']
 
+## LOCAL .env file
+# secrets = dotenv_values(".env")
+# OPENAI_API_KEY = secrets['OPENAI_API_KEY']
+
+## DEPLOYMENT: Streamlit .env file
+import streamlit as st
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 ## Define template
 template = """Given the following product description, output a JSON with the following structure.
