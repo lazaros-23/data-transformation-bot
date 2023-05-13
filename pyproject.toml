@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "data-transformation-bot"
+version = "0.1.0"
+description = ""
+authors = ["Panagiotis Papaemmanouil <papaemman.pan@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+pandas = "^2.0.1"
+openpyxl = "^3.1.2"
+langchain = "^0.0.167"
+openai = "^0.27.6"
+huggingface-hub = "^0.14.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
