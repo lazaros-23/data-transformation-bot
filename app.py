@@ -24,7 +24,7 @@ def main():
 
     # If the user is not logged in, show the login page
     if st.session_state.username is None:
-        st.title("Data Transformation Bot Login")
+        st.title("Login")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
         login_button = st.button("Login")
@@ -49,7 +49,7 @@ def main():
             st.write(words)
 
         # option to upload a file
-        uploaded_file = st.file_uploader("Upload Data")
+        uploaded_file = st.file_uploader("Upload Data", type="xlsx")
 
         # if a file is uploaded, display the contents
         if uploaded_file is not None:
